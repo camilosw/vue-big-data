@@ -1,6 +1,14 @@
-# bigdata
+# Vue.js big data test
 
-> A Vue.js project
+> Testing Vue.js with many data loaded at once.
+
+## Usage
+
+This project simulate a list of products with categories. You can generate your data with the desired ammount of products and categories.
+
+Generate the data:
+
+node generate.js -c=10 -p=1000
 
 ## Build Setup
 

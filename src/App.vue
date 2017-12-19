@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <List :products="products" />
   </div>
 </template>
@@ -21,12 +20,11 @@ export default {
     }
   },
   created () {
-    axios.get('data.json')
-      // .then(response => {
-      //   console.log(response)
-      //   // const data = JSON.parse(response)
-      //   // this.products
-      // })
+    axios.get('/static/data.json')
+      .then(response => {
+        this.categories = response.data.categories
+        this.products = response.data.products
+      })
   }
 }
 </script>

@@ -22,5 +22,4 @@ const data = {
   products
 }
 
-fs.writeFileSync('dist/data.json', JSON.stringify(data))
-fs.writeFileSync('src/data.json', JSON.stringify(data))
+fs.writeFileSync('static/data.json', JSON.stringify(data))
