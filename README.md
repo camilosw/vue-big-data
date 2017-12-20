@@ -4,11 +4,12 @@
 
 ## Usage
 
-This project simulate a list of products with categories. You can generate your data with the desired ammount of products and categories.
+This project simulate a list of products with categories. You must generate your data with the desired ammount of products and categories before run the project.
 
-Generate the data:
-
+``` bash
+# generate the data
 node generate.js -c=10 -p=1000
+```
 
 ## Build Setup
 
