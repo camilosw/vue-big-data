@@ -27,19 +27,18 @@
 </template>
 
 <script>
-// import { updateActiveCategory } from '../vuex/actions'
-
 export default {
-  props: ['categories'],
-  data () {
-    return {}
-  },
   methods: {
     setActiveCategory (categoryId) {
       this.$store.dispatch('setActiveCategory', categoryId)
     },
     isActive (categoryId) {
       return this.$store.getters.currentCategoryId === categoryId
+    }
+  },
+  computed: {
+    categories () {
+      return this.$store.state.categories
     }
   }
 }

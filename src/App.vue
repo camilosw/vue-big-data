@@ -2,25 +2,28 @@
   <section class="section">
     <div id="app" class="container columns">
       <div class="column is-2">
-        <Categories :categories="categories" />
+        <Categories />
       </div>
       <div class="column is-10">
+        <Pagination />
         <List :products="products" />
+        <Pagination />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import axios from 'axios'
 import List from './components/List'
 import Categories from './components/Categories'
+import Pagination from './components/Pagination'
 
 export default {
   name: 'app',
   components: {
     List,
-    Categories
+    Categories,
+    Pagination
   },
   data () {
     return {
@@ -28,12 +31,8 @@ export default {
       products: []
     }
   },
-  created () {
-    axios.get('/static/data.json')
-      .then(response => {
-        this.categories = response.data.categories
-        this.products = response.data.products
-      })
+  mounted () {
+    this.$store.dispatch('loadData')
   }
 }
 </script>

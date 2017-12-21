@@ -5,14 +5,14 @@ const fs = require('fs');
 const numCategories = argv.c || 10
 const numProducts = argv.p || 10
 
-const categories = new Array(numCategories).fill(0).map(() => {
+const categories = new Array(numCategories).fill(null).map(() => {
   return {
     id: faker.random.uuid(),
     name: faker.lorem.words(2)
   }
 })
 
-const products = new Array(numProducts).fill(0).map(() => {
+const products = new Array(numProducts).fill(null).map(() => {
   return {
     id: faker.random.uuid(),
     name: faker.commerce.productName(),

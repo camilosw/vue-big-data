@@ -27,16 +27,9 @@
 
 <script>
 export default {
-  props: ['products'],
-  data () {
-    return {
-    }
-  },
   computed: {
     filteredProducts () {
-      return this.products.filter(product => {
-        return !this.$store.getters.currentCategoryId || product.categoryId === this.$store.getters.currentCategoryId
-      })
+      return this.$store.getters.filteredProducts
     }
   }
 }
